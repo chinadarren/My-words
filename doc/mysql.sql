@@ -1,5 +1,9 @@
 create DATABASE words;
+
+
 use words;
+
+
 
 # user table
 CREATE TABLE user (

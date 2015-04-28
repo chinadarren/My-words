@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>index page111</title>
+    <title>index page</title>
 </head>
 <body>
 <h1>index page222</h1>

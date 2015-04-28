@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 //将TXT文件导入数据库
 public class DumpData {
 
-    private static final String SQL = "INSERT INTO word VALUES(NULL, ?, ?, ?, 'CET-6')";
+    private static final String SQL = "INSERT INTO word VALUES(NULL, ?, ?, ?, 'CET-4')";
     private static final String[] REGEXPS = {"^[A-z]+", "[a-z]+\\.", "[\\u4e00-\\u9fbb\\s；，()…]+"};
 
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class DumpData {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("doc/CET-6.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("doc/CET-4.txt"));
             String line;
             connection = DB.getConnection();
             preparedStatement = connection.prepareStatement(SQL);

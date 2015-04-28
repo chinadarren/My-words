@@ -10,8 +10,8 @@ $(function () {
             type: 'post',
             data: {'username':username},
             //dataType: 'json',
-            success: function (result) {
-                if (result) {
+            success: function (result ){
+                if (result == true ) {
                     hint.text('username is exist!');
                     hint.css('color', '#f00');
                 } else {
@@ -21,13 +21,13 @@ $(function () {
             },
             error: function (a, b, c) {
                 alert(a.status);
-            },
-            complete: function () {
-                alert('complete...')
-            },
-            beforeSend: function () {
-                alert('before...')
             }
+            //complete: function () {
+            //    alert('complete...')
+            //},
+            //beforeSend: function () {
+            //    alert('before...')
+            //}
         });
     });
 });

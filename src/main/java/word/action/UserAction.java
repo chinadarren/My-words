@@ -58,7 +58,7 @@ public class UserAction extends HttpServlet {
             resp.setContentType("text/html, charset=UTF-8");
             PrintWriter writer = resp.getWriter();
             if (resultSet.next()) {
-                System.out.println("result ture");
+                System.out.println("result true");
                 writer.print("true");
             } else {
                 System.out.println("result false");

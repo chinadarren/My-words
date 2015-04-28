@@ -108,29 +108,29 @@ public class WordAction extends HttpServlet {
     }
 
     private void query(HttpServletRequest req, HttpServletResponse resp) throws ServletException , IOException {
-        Connection connection = DB.getConnection();
-        String sql = "select * from word WHERE english like ? OR chinese like ?";
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        String keyword = req.getParameter("keyword");
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, "%" + keyword + "%");
-            preparedStatement.setString(2, "%" + keyword + "%");
-            System.out.println(preparedStatement.toString());
-            resultSet = preparedStatement.executeQuery();
-            List<Word> words = new ArrayList<Word>();
-            while (resultSet.next()) {
-                Word word = new Word(resultSet.getInt("id"), resultSet.getString("english"), resultSet.getString("property"), resultSet.getString("chinese"), resultSet.getString("level"));
-                words.add(word);
-            }
-            req.getSession().setAttribute("words", words);
-            resp.sendRedirect("/home.jsp");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            DB.close(resultSet, preparedStatement, connection);
-        }
+//        Connection connection = DB.getConnection();
+//        String sql = "select * from word WHERE english like ? OR chinese like ?";
+//        PreparedStatement preparedStatement = null;
+//        ResultSet resultSet = null;
+//        String keyword = req.getParameter("keyword");
+//        try {
+//            preparedStatement = connection.prepareStatement(sql);
+//            preparedStatement.setString(1, "%" + keyword + "%");
+//            preparedStatement.setString(2, "%" + keyword + "%");
+//            System.out.println(preparedStatement.toString());
+//            resultSet = preparedStatement.executeQuery();
+//            List<Word> words = new ArrayList<Word>();
+//            while (resultSet.next()) {
+//                Word word = new Word(resultSet.getInt("id"), resultSet.getString("english"), resultSet.getString("property"), resultSet.getString("chinese"), resultSet.getString("level"));
+//                words.add(word);
+//            }
+//            req.getSession().setAttribute("words", words);
+//            resp.sendRedirect("/home.jsp");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            DB.close(resultSet, preparedStatement, connection);
+//        }
 
     }
 

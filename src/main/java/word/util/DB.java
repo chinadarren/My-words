@@ -9,7 +9,7 @@ import com.mysql.jdbc.Driver;
  */
 public class DB {
     //定义用于连接数据库的常量
-    private static final String URL ="jdbc:mysql://129.184.13.89:3306/words";
+    private static final String URL ="jdbc:mysql://localhost:3306/words";
     private static final String USER = "root";
     private static final String PASSWORD = "system";
    //关联数据库
